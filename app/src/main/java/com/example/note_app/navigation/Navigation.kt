@@ -18,7 +18,7 @@ fun AppNavigation(notesViewModel: NotesViewModel) {
     NavHost(navController = navController, startDestination = "overview") {
         composable("overview") {
             OverviewScreen(
-                notesViewModel.filteredNotes,
+                notes = notesViewModel.filteredNotes,
                 notesText = notesViewModel.searchText,
                 onNoteClicked = { note ->
                     navController.navigate("detail/${note.documentId}")
